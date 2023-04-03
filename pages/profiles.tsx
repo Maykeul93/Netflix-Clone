@@ -55,7 +55,7 @@ const Profiles = () => {
                                 group-hover:text-white
                                 "
                             >
-                                {user.name}
+                                {user?.name}
                             </div>
                         </div>
                     </div>
