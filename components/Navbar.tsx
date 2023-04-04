@@ -1,6 +1,14 @@
 import NavbarItem from "./NavbarItem";
+import MobileMenu from "./MobileMenu";
+import {FaChevronDown} from "react-icons/fa";
+import { useCallback, useState } from "react";
 
 const Navbar = () => {
+    const [showMobileMenu, setShowMobileMenu] = useState(false);
+
+    const toggleMobileMenu = useCallback(()=> {
+        setShowMobileMenu((current) => !current)
+    },[])
     return (
         <nav className="w-full fixed z-40">
             <div className="
@@ -34,8 +42,10 @@ const Navbar = () => {
                     
 
                 </div>
-                <div className="lg:hidden flex-row items-center gap-2 ml-8 cursor-pointer relative">
+                <div onClick={toggleMobileMenu}  className="lg:hidden flex flex-row items-center gap-2 ml-8 cursor-pointer relative">
                     <p className="text-white text-sm">Browse</p>
+                    <FaChevronDown className="text-white transition"/>
+                    <MobileMenu visible={showMobileMenu}/>
                 </div>
             </div>
         </nav>
