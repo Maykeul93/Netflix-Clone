@@ -1,6 +1,6 @@
 import NavbarItem from "./NavbarItem";
 import MobileMenu from "./MobileMenu";
-import {FaChevronDown} from "react-icons/fa";
+import {FaBell, FaChevronDown, FaSearch} from "react-icons/fa";
 import { useCallback, useState } from "react";
 
 const Navbar = () => {
@@ -46,6 +46,14 @@ const Navbar = () => {
                     <p className="text-white text-sm">Browse</p>
                     <FaChevronDown className="text-white transition"/>
                     <MobileMenu visible={showMobileMenu}/>
+                </div>
+                <div className="flex flex-row ml-auto gap-7 items-center">
+                    <div className="text-gray-200 hover:text-gray-300 cursor-pointer">
+                        <FaSearch className="text-white"/>
+                    </div>
+                    <div className="text-gray-200 hover:text-gray-300 cursor-pointer">
+                        <FaBell className="text-white"/>
+                    </div>
                 </div>
             </div>
         </nav>
