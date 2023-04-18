@@ -27,7 +27,7 @@ export default async function handler (req:NextApiRequest, res: NextApiResponse)
                     email:currentUser.email,
                 },
                 data:{
-                    favoritesIds:{
+                    favoriteIds:{
                         push: movieId
                     }
                 }
@@ -51,7 +51,7 @@ export default async function handler (req:NextApiRequest, res: NextApiResponse)
                 throw new Error('Invalid Id')
             }
 
-            const updateFavoritesIds = without(currentUser.favoritesIds, movieId)
+            const updateFavoritesIds = without(currentUser.favoriteIds, movieId)
 
             const updateUser = await prismadb.user.update({
                 where:{
